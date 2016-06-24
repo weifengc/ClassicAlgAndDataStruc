@@ -1,4 +1,4 @@
-package com.weifengcui.testcase;
+package com.weifengcui.core.testcase;
 
 
 

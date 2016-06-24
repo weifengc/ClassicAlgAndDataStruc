@@ -1,54 +1,33 @@
-package com.weifengcui.alg.search;
+package com.weifengcui.core.alg.search;
 
-import com.weifengcui.testcase.TestArray;
-import com.weifengcui.testcase.Tools;
+import com.weifengcui.core.API.BinarySearchAPI;
+import com.weifengcui.core.testcase.TestArray;
+import com.weifengcui.core.testcase.Tools;
 
 import java.util.Arrays;
 
 /**
- * Created by weifengc on 6/24/16.
+ * This class use recursive method to finish a binary search.
  */
-public class BinarySearch {
+public class BinarySearchRecursive implements BinarySearchAPI{
 
     public static void main(String[] args) {
         //test case
         int[] arr1 = TestArray.sortedIntArray;
         int[] targets = {0, 2, 4, 9};
 
+        BinarySearchAPI bs = new BinarySearchRecursive();
+
         for (int target : targets) {
             Tools.info("Search %d in sorted array %s " +
                             "positions is %d ",
                     target, Arrays.toString(arr1),
-                    binarySearch(arr1, target));
+                    bs.binarySearch(arr1, target));
         }
     }
 
-    /**
-     * Binary search, find the position of the target in an array.
-     *
-     * @param sortedArr this should be a sorted array.
-     * @param target    target number.
-     * @return position, -1 if not in the array.
-     */
-    public static int binarySearch(int[] sortedArr, int target) {
-        /**
-         * Check boundary.
-         * Sort the array, it must be sorted first.
-         * Create a recursive method, with start and end point.
-         * Find middle value, if less than middle value, search in left, or search in right.
-         */
-
-        if (sortedArr == null || sortedArr.length == 0) {
-            return -1;
-        }
 
 
-        int start = 0;
-        int end = sortedArr.length - 1; // always use the position, which will not cause array out of boundary error.
-
-        return binarySearch(sortedArr, target, start, end);
-
-    }
 
     private static int binarySearch(int[] arr, int target, int start, int end) {
         /**
@@ -74,6 +53,25 @@ public class BinarySearch {
     }
 
 
+    @Override
+    public int binarySearch(int[] sortedArr, int target) {
+        /**
+         * Check boundary.
+         * Sort the array, it must be sorted first.
+         * Create a recursive method, with start and end point.
+         * Find middle value, if less than middle value, search in left, or search in right.
+         */
+
+        if (sortedArr == null || sortedArr.length == 0) {
+            return -1;
+        }
+
+
+        int start = 0;
+        int end = sortedArr.length - 1; // always use the position, which will not cause array out of boundary error.
+
+        return binarySearch(sortedArr, target, start, end);
+    }
 }
 
 
