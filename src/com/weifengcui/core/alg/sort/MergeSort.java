@@ -19,8 +19,6 @@ public class MergeSort implements SortAPI {
         Tools.info("original: %s\nsorted: %s",
                 Arrays.toString(TestArray.intArray),
                 Arrays.toString(arr));
-
-
     }
 
 
