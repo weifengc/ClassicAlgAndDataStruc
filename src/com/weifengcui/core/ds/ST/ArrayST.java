@@ -4,6 +4,8 @@ import com.weifengcui.core.API.SymbolTable;
 
 /**
  * Created by weifengc on 7/4/16.
+ * This one use array of objects to contain key and values.
+ * 
  */
 public class ArrayST<K, V> implements SymbolTable<K, V> {
     private static final int DEFAULT_SIZE = 10;
