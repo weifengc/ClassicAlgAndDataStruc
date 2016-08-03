@@ -1,6 +1,6 @@
 package com.weifengcui.core.ds.ST;
 
-import com.weifengcui.core.API.SymbolTalbe;
+import com.weifengcui.core.API.SymbolTable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +9,7 @@ import java.util.List;
  * Move to ArrayST.java
  */
 @Deprecated
-public class ArrayListST<K, V> implements SymbolTalbe<K, V> {
+public class ArrayListST<K, V> implements SymbolTable<K, V> {
     //a key array and a value arr
     List<K> kList = new ArrayList<K>();
     List<V> vList = new ArrayList<V>();
